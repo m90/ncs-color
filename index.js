@@ -172,6 +172,6 @@
 		, rgb : function(val){
 			return toRgb(convert(val));
 		}
-	}
+	};
 
 });
