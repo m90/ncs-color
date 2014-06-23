@@ -9,15 +9,19 @@
 
 })(this, function(){
 
-	function convert(n){
+	var ncsRe = /^(?:NCS|NCS\sS)\s(\d{2})(\d{2})-(N|[A-Z])(\d{2})?([A-Z])?$/;
+
+	function convert(ncs){
+
+		ncs = ncs.trim().toUpperCase().match(ncsRe);
+
+		if (ncs === null) return false;
 
 		var
-		ncs = n.slice(n.match(/^NCS\sS/) !== null ? 5 : 3).trim()
-		, RGB = {}
-		, Sn = parseInt(ncs.substr(0,2), 10)
-		, Cn = parseInt(ncs.substr(2,2), 10)
-		, C1 = ncs.substr(5,1)
-		, N = parseInt(ncs.substr(6,2), 10) || 0;
+		Sn = parseInt(ncs[1], 10)
+		, Cn = parseInt(ncs[2], 10)
+		, C1 = ncs[3]
+		, N = parseInt(ncs[4], 10) || 0;
 
 		if (C1 !== 'N'){
 
@@ -91,7 +95,7 @@
 				}
 				Ba = ((Math.sqrt(10000 - Math.pow(x3, 2))) - 10) / 100;
 			} else if (( C1 === 'B' && N > 80) || ( C1 === 'G' && N <= 40)) {
-				if (C1=='B') {
+				if (C1 === 'B') {
 					x5 = (N - 80 ) - 131;
 				} else {
 					x5 = (N + 20 ) - 131;
@@ -138,16 +142,23 @@
 
 			ss = 1 / top;
 
-			RGB.R = parseInt((Rc * ss * (100 - S) / 100) * 255, 10);
-			RGB.G = parseInt((Gc * ss * (100 - S) / 100) * 255, 10);
-			RGB.B = parseInt((Bc * ss * (100 - S) / 100) * 255, 10);
+			return {
+				R : parseInt((Rc * ss * (100 - S) / 100) * 255, 10)
+				, G : parseInt((Gc * ss * (100 - S) / 100) * 255, 10)
+				, B : parseInt((Bc * ss * (100 - S) / 100) * 255, 10)
+			};
+
 
 		} else {
 
-			RGB.R = RGB.G = RGB.B = parseInt((1 - Sn / 100) * 255, 10);
+			var v = parseInt((1 - Sn / 100) * 255, 10);
+			return {
+				R : v
+				, G : v
+				, B : v
+			};
 
 		}
-		return RGB;
 
 	}
 
@@ -157,7 +168,7 @@
 
 
 	function toHex(RGB){
-		return '#' + hexify(RGB.R) +  hexify(RGB.G) + hexify(RGB.B);
+		return ['#', hexify(RGB.R), hexify(RGB.G), hexify(RGB.B)].join('');
 	}
 
 	function toRgb(RGB){
