@@ -1,0 +1,27 @@
+{
+  "name": "ncs-color",
+  "version": "0.1.0",
+  "description": "Convert NCS color names to screen values",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:m90/ncs-color.git"
+  },
+  "keywords": [
+    "ncs",
+    "color",
+    "conversion"
+  ],
+  "author": "Frederik Ring <frederik.ring@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/m90/ncs-color/issues"
+  },
+  "homepage": "https://github.com/m90/ncs-color",
+  "dependencies": {
+    "mocha": "^1.20.1"
+  }
+}
