@@ -28,16 +28,12 @@
 			var
 			S = (1.05 * Sn - 5.25)
 			, C = Cn
-			, Sx = Sn < 10 ? '0' + Sn : Sn
 			, Cx = Cx < 10 ? '0' + Cn : Cn
-			, Nx = N < 10 ? '0' + N : N
-			, C1x = parseInt(C1, 10)
 			, Ra
 			, x1
 			, Ba
 			, x2
 			, x3
-			, x4
 			, x5
 			, Ga
 			, x6
