@@ -32,7 +32,6 @@
 			, Cx = Cx < 10 ? '0' + Cn : Cn
 			, Nx = N < 10 ? '0' + N : N
 			, C1x = parseInt(C1, 10)
-			, C2x
 			, Ra
 			, x1
 			, Ba
@@ -50,17 +49,7 @@
 			, top
 			, ss;
 
-			if (C1 === ' R') {
-				C2x = 'B';
-			} else if (C1 === 'B') {
-				C2x = 'G';
-			} else if (C1 === 'G') {
-				C2x = 'Y';
-			} else {
-				C2x = 'R';
-			}
-
-			// determine red
+			// extract red
 			if (C1 === 'Y' && N <= 60) {
 				Ra = 1;
 			} else if (( C1 === 'Y' && N > 60) || ( C1 === 'R' && N <= 80)) {
@@ -77,7 +66,7 @@
 				Ra = ((Math.sqrt(33800 - Math.pow(x1, 2))) - 70) / 100;
 			}
 
-			// determine blue
+			// extract blue
 			if (C1 === 'Y' && N <= 80) {
 				Ba = 0;
 			} else if (( C1 === 'Y' && N > 80) || ( C1 === 'R' && N <= 60)) {
@@ -105,7 +94,7 @@
 				Ba = 0;
 			}
 
-			// determine green
+			// exctract green
 			if (C1 === 'Y') {
 				Ga = ( 85 - 17/20 * N ) / 100;
 			} else if ( C1 === 'R' && N <= 60 ) {
@@ -123,13 +112,13 @@
 				Ga = ( 90 - (1/8 * x7 )) / 100;
 			}
 
-			// determine saturation
+			// extract saturation
 			x2 = (Ra + Ga + Ba)/3;
 			Rc = ((x2 - Ra) * (100 - C) / 100) + Ra;
 			Gc = ((x2 - Ga) * (100 - C) / 100) + Ga;
 			Bc = ((x2 - Ba) * (100 - C) / 100) + Ba;
 
-			// determine blackness
+			// extract blackness
 			if (Rc > Gc && Rc > Bc) {
 				top = Rc;
 			} else if (Gc > Rc && Gc > Bc) {
