@@ -4,6 +4,7 @@
   "description": "Convert NCS color names to screen values",
   "main": "ncscolor.js",
   "scripts": {
+    "pretest" : "jshint ncscolor.js",
     "test": "mocha test.js"
   },
   "repository": {
