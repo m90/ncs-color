@@ -1,11 +1,12 @@
 {
   "name": "ncs-color",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Convert NCS color names to screen values",
   "main": "ncscolor.js",
   "scripts": {
-    "pretest" : "jshint ncscolor.js",
-    "test": "mocha test.js"
+    "pretest": "node node_modules/jshint/bin/jshint ncscolor.js",
+    "test": "node node_modules/mocha/bin/mocha test.js",
+    "posttest": "node node_modules/uglify-js/bin/uglifyjs ncscolor.js > ncscolor.min.js --mangle"
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,8 @@
   },
   "homepage": "https://github.com/m90/ncs-color",
   "devDependencies": {
-    "mocha": "^1.20.1"
+    "jshint": "^2.5.5",
+    "mocha": "^1.20.1",
+    "uglify-js": "^2.4.15"
   }
 }
