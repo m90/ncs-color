@@ -15,4 +15,11 @@ describe('ncs', function(){
 		assert.equal(ncs.rgb('NCS 5000-N'), 'rgb(127,127,127)');
 	});
 
+	it('returns null if invalid NCS color name', function() {
+		assert.equal(ncs.rgb(''), null);
+		assert.equal(ncs.hex('NCS5000-N'), null);
+		assert.equal(ncs.hex('12345'), null);
+		assert.notEqual(ncs.hex('NCS 5000-N'), null);
+	});
+
 });
