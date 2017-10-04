@@ -163,10 +163,10 @@
 
 	return {
 		hex : function(val){
-			return toHex(convert(val));
+			return val && convert(val) ? toHex(convert(val)) : null;
 		}
 		, rgb : function(val){
-			return toRgb(convert(val));
+			return val && convert(val) ? toRgb(convert(val)) : null;
 		}
 	};
 
