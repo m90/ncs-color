@@ -1,6 +1,6 @@
 {
   "name": "ncs-color",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "Convert NCS color names to screen values",
   "main": "ncscolor.js",
   "scripts": {
