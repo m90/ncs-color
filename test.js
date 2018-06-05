@@ -20,6 +20,7 @@ describe('ncs', function(){
 		assert.equal(ncs.hex('NCS5000-N'), null);
 		assert.equal(ncs.hex('12345'), null);
 		assert.equal(ncs.hex('NCS 5000-Z20Y'), null);
+		assert.equal(ncs.hex('NCS 4055-R20Z'), null);
 		assert.notEqual(ncs.hex('NCS 5000-N'), null);
 	});
 
