@@ -20,7 +20,7 @@ require(['ncs-color'], function(ncsColor){
 
 ### Global:
 ```html
-<script src="https://unpkg.com/ncs-color@0.3.0/ncscolor.min.js"></script>
+<script src="https://unpkg.com/ncs-color@1/ncscolor.min.js"></script>
 <script>
     ncsColor.hex('NCS S 2060-B'); // => '#399bd6'
 </script>
