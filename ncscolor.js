@@ -9,7 +9,7 @@
 
 })(this, function(){
 
-	var ncsRe = /^(?:NCS|NCS\sS)\s(\d{2})(\d{2})-(N|R|G|B|Y)(\d{2})?([R|G|B|Y])?$/;
+	var ncsRe = /^(?:NCS|NCS\sS)\s(\d{2})(\d{2})-(N|R|G|B|Y)(\d{2})?(R|G|B|Y)?$/;
 
 	function convert(ncs){
 
