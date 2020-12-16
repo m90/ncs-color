@@ -5,7 +5,7 @@
   "main": "ncscolor.js",
   "scripts": {
     "test": "mocha test.js",
-    "posttest": "jshint ncscolor.js",
+    "posttest": "standard",
     "prepublishOnly": "npm test && uglifyjs ncscolor.js --mangle > ncscolor.min.js"
   },
   "repository": {
@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/m90/ncs-color",
   "devDependencies": {
-    "jshint": "^2.5.5",
+    "standard": "^14.3.1",
     "mocha": "^5.2.0",
     "uglify-js": "^2.4.15"
   }
