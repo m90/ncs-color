@@ -1,9 +1,9 @@
 name: Run tests
 
-on: push
+on: [push, pull_request]
 
 jobs:
-  benchmark:
+  test:
     runs-on: ubuntu-latest
     strategy:
       matrix:
