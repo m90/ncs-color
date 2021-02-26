@@ -116,7 +116,9 @@
         top = Gc
       } else if (Bc > Rc && Bc > Gc) {
         top = Bc
-      } else {
+      } else if (Rc == Gc) {
+				top = Rc;
+			} else {
         top = (Rc + Gc + Bc) / 3
       }
 
