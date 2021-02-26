@@ -110,17 +110,7 @@
       Bc = ((x2 - Ba) * (100 - C) / 100) + Ba
 
       // extract blackness
-      if (Rc > Gc && Rc > Bc) {
-        top = Rc
-      } else if (Gc > Rc && Gc > Bc) {
-        top = Gc
-      } else if (Bc > Rc && Bc > Gc) {
-        top = Bc
-      } else if (Rc == Gc) {
-				top = Rc;
-			} else {
-        top = (Rc + Gc + Bc) / 3
-      }
+      top = Math.max(Rc, Gc, Bc);
 
       ss = 1 / top
 
