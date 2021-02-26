@@ -33,7 +33,7 @@ describe('ncs', function () {
 // TODO test more nuances
 // TODO skip edge case that triggers bug in w3color.js -> NCS 0580-G76Y (etc?)
 
-const w3colorLib = require('./w3color.node.js');
+const w3colorLib = require('./w3color.common.js');
 // https://www.w3schools.com/colors/colors_ncs.asp
 // https://www.w3schools.com/colors/colors_converter.asp?color=ncs(2030-B30G)
 // https://www.w3schools.com/lib/w3color.js
