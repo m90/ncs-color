@@ -29,7 +29,7 @@ describe('ncs', function () {
     Array.from({ length: 420 })
       .map(function (_, index) {
         const colorDegrees = index % 400
-        return 'NCS S 0580-' + ncsOfDegrees(colorDegrees)
+        return 'NCS S 0580-' + ncsHueOfDegrees(colorDegrees)
       })
       .map(function (ncsValue) {
         return { name: ncsValue, rgb: ncs.rgb(ncsValue) }
@@ -62,15 +62,17 @@ describe('ncs', function () {
       return [R, G, B]
     }
 
-    function ncsOfDegrees (d) {
+    function ncsHueOfDegrees (d) {
+      // full circle = 400 degrees
+      const phi = d % 100;
       if (d === 0) return 'R' // red
-      if (d < 100) return 'R' + d + 'B' // red-blue
+      if (d < 100) return 'R' + phi + 'B' // red-blue
       if (d === 100) return 'B' // blue
-      if (d < 200) return 'B' + (-100 + d) + 'G' // blue-green
+      if (d < 200) return 'B' + phi + 'G' // blue-green
       if (d === 200) return 'G' // green
-      if (d < 300) return 'G' + (-200 + d) + 'Y' // green-yellow
+      if (d < 300) return 'G' + phi + 'Y' // green-yellow
       if (d === 300) return 'Y' // yellow
-      if (d < 400) return 'Y' + (-300 + d) + 'R' // yellow-red
+      if (d < 400) return 'Y' + phi + 'R' // yellow-red
       if (d <= 400) return 'R' // red
     }
   })
