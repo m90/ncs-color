@@ -66,13 +66,13 @@ describe('ncs', function () {
       // full circle = 400 degrees
       const phi = d % 100;
       if (d === 0) return 'R' // red
-      if (d < 100) return 'R' + phi + 'B' // red-blue
+      if (d < 100) return 'R' + phi + 'B' // red + phi * blue
       if (d === 100) return 'B' // blue
-      if (d < 200) return 'B' + phi + 'G' // blue-green
+      if (d < 200) return 'B' + phi + 'G' // blue + phi * green
       if (d === 200) return 'G' // green
-      if (d < 300) return 'G' + phi + 'Y' // green-yellow
+      if (d < 300) return 'G' + phi + 'Y' // green + phi * yellow
       if (d === 300) return 'Y' // yellow
-      if (d < 400) return 'Y' + phi + 'R' // yellow-red
+      if (d < 400) return 'Y' + phi + 'R' // yellow + phi * red
       if (d <= 400) return 'R' // red
     }
   })
