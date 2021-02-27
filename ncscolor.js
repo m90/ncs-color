@@ -110,7 +110,7 @@
       Bc = ((x2 - Ba) * (100 - C) / 100) + Ba
 
       // extract blackness
-      top = Math.max(Rc, Gc, Bc);
+      top = Math.max(Rc, Gc, Bc)
 
       ss = 1 / top
 
