@@ -64,7 +64,7 @@ describe('ncs', function () {
 
     function ncsHueOfDegrees (d) {
       // full circle = 400 degrees
-      const phi = d % 100;
+      const phi = d % 100
       if (d === 0) return 'R' // red
       if (d < 100) return 'R' + phi + 'B' // red + phi * blue
       if (d === 100) return 'B' // blue
