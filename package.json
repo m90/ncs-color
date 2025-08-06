@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/m90/ncs-color",
   "devDependencies": {
-    "standard": "^14.3.1",
+    "standard": "^17.1.2",
     "mocha": "^10.1.0",
     "uglify-js": "^2.4.15"
   }
